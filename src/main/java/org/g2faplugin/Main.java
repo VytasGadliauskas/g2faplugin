@@ -1,4 +1,4 @@
-package org.example;
+package org.g2faplugin;
 
 import com.google.zxing.WriterException;
 import de.taimos.totp.TOTP;
@@ -12,7 +12,7 @@ import java.security.SecureRandom;
 import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args) throws IOException, WriterException {
+    public static void main(String[] args) throws  WriterException {
         String secretKey = null;
         if (args.length > 0) {
             secretKey = ConfigFile.GetKeyFromConfigFile();

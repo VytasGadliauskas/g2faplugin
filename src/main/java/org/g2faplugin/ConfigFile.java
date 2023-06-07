@@ -1,13 +1,13 @@
-package org.example;
+package org.g2faplugin;
 
 import java.io.*;
 import java.util.Properties;
 
 public class ConfigFile {
-    private static File configFile = new File("config.properties");
+    private static final File configFile = new File("config.properties");
 
     public static String GetKeyFromConfigFile(){
-        try ( FileReader reader = new FileReader(configFile);){
+        try ( FileReader reader = new FileReader(configFile)){
             Properties props = new Properties();
             props.load(reader);
             return props.getProperty("key");
@@ -19,7 +19,7 @@ public class ConfigFile {
         return null;
     }
     public static void  PutKeyToConfigFile(String key){
-        try (FileWriter writer = new FileWriter(configFile);){
+        try (FileWriter writer = new FileWriter(configFile)){
             Properties props = new Properties();
             props.setProperty("key", key);
             props.store(writer, "application settings");
