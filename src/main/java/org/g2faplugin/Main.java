@@ -5,7 +5,6 @@ import de.taimos.totp.TOTP;
 import io.github.shashankn.qrterminal.QRCode;
 import org.apache.commons.codec.binary.Base32;
 import org.apache.commons.codec.binary.Hex;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.SecureRandom;
