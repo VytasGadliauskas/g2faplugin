@@ -17,8 +17,8 @@ run g2faplugin.[exe|sh] --key email name
 <img height="300" alt="picture1.png" src="picture1.png" width="400"/>
 
 
-Use QR code or Key in Google Autentificator
-[https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US]()
+Use QR code or Key in[ Google Autentificator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US)
+
 
 
 
