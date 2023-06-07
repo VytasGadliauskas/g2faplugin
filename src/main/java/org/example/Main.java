@@ -44,11 +44,13 @@ public class Main {
                     for (int i = 0; i < args.length; i++) {
                         if (args[i].contains("=")) {
                             String[] arrStr = args[i].split("=");
-                            params.put(arrStr[0], arrStr[1]);
+                            if (arrStr.length ==2 ) {
+                                params.put(arrStr[0], arrStr[1]);
+                            }
                         }
                     }
                     if (!params.isEmpty()) {
-                        if (!params.get("password").equals(null)) {
+                        if (params.get("password") != null) {
                             if (params.get("password").equals(code)) {
                                 System.out.println("1");
                                 System.exit(0);
