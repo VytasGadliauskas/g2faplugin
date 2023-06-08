@@ -12,7 +12,7 @@ Simple plugin to have single user Google 2FA autentification to OpenVpn
 ## Usage
 Copy application to OpenVpn  directory.
 In openvpn config set: auth-user-pass-verify g2faplugin.[exe|sh] via-env
-run g2faplugin.[exe|sh] --key email name 
+run g2faplugin.[exe|sh] --key username servicename (pvz.: VPN) 
 
 <img height="300" alt="picture1.png" src="picture1.png" width="400"/>
 
@@ -20,10 +20,9 @@ run g2faplugin.[exe|sh] --key email name
 Use QR code or Key in[ Google Autentificator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US)
 
 
-
-
 ## OpenVpn client
-username can be any password - Google 2FA Code
+username - username generated with --key,
+password - Google 2FA Code
 
 _report bugs suggestions :)
 mail.: vytasgadliauskas@gmail.com_

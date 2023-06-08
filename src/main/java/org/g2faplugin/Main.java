@@ -5,6 +5,8 @@ import de.taimos.totp.TOTP;
 import io.github.shashankn.qrterminal.QRCode;
 import org.apache.commons.codec.binary.Base32;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -14,11 +16,14 @@ import java.security.spec.InvalidKeySpecException;
 
 
 public class Main {
+
+    private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) throws WriterException, NoSuchAlgorithmException, InvalidKeySpecException {
 
         String secretKey = null;
         String username = System.getenv("username");
         String password = System.getenv("password");
+        logger.debug("username : "+username+" , password :" +password);
         if (args.length > 0) {
             if (args[0].equals("--key") && (args.length == 3)) {
                 ConfigFile.PutKeyToConfigFile(args[1], generateSecretKey());
@@ -49,20 +54,25 @@ public class Main {
             secretKey = ConfigFile.GetKeyFromConfigFile(username);
             String code = getTOTPCode(secretKey);
             if (code != null) {
+                logger.debug("code from TOTP: "+ code);
                 if (password.equals(code)) {
                     System.out.println("ok");
+                    logger.debug(" ok ");
                     System.exit(0);
                 } else {
                     System.out.println("no ok");
+                    logger.debug(" no ok ");
                     System.exit(1);
                 }
             }
             System.out.println("try with --help");
             System.out.println("no ok");
+            logger.debug(" no ok ");
             System.exit(1);
         }
         System.out.println("try with --help");
         System.out.println("no ok");
+        logger.debug(" no ok ");
         System.exit(1);
     }
 
